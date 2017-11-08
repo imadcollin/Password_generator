@@ -2,14 +2,28 @@
 
 var generator = require('generate-password');
 
-var password = generator.generate({
-   length: 10,
-   numbers: true,
-   uppercase: true,
-   symbols:true,
-   uppercase:true
-   
-});
+let arr=[]
+const words=4;
+for(let i=0;i<words;i++){
 
-// 'uEyMTw32v9' 
+    password=generator.generate({
+        length: 10,
+        numbers: true,
+        uppercase: true,
+        symbols:false,
+        uppercase:true
+        
+     });
+
+
+arr.push(password)
+} 
 console.log(password);
+
+//print passwords
+let str=''
+for(let i=0;i<arr.length;i++){
+str+=arr[i]+' '
+}
+console.log(str)
+    
