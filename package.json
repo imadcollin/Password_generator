@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/imadcollin/Password_generator#readme",
   "dependencies": {
-    "generate-password": "^1.3.0"
+    "generate-password": "^1.3.0",
+    "string-entropy": "0.0.2"
   }
 }

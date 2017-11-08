@@ -18,7 +18,6 @@ for(let i=0;i<words;i++){
 
 arr.push(password)
 } 
-console.log(password);
 
 //print passwords
 let str=''
