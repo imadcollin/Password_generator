@@ -43,7 +43,7 @@ console.log('You need ' + log + ' RANDOM characters in [a-zA-Z0-9] to get the sa
 //Solution 1 - Teacher comment: Password should be easy to remember! 
 //==================================================================
 
-/*
+
 //Imports 
 var xkcdPassword = require('xkcd-password')
 var entropy = require('string-entropy');
@@ -51,18 +51,18 @@ var pw = new xkcdPassword()
 
 //Easy to remember so less options:teacher comments! 
 var options = {
- numWords: 4,
- //minLength: 5,
- maxLength: 8
+    numWords: 4,
+    //minLength: 5,
+    maxLength: 8
 }
-var res="";
-printRes="";
+var res = "";
+printRes = "";
 // using callbacks 
 pw.generate(options, function (err, result) {
-    
-    for(i=0;i<result.length;i++){
-        res+=result[i];
-        printRes+=result[i]+" ";
+
+    for (i = 0; i < result.length; i++) {
+        res += result[i];
+        printRes += result[i] + " ";
 
     }
     console.log(options.numWords + ' RANDOM words from word list of NNNNNN words')
@@ -72,50 +72,50 @@ pw.generate(options, function (err, result) {
     pow = Math.pow(62, options.maxLength)
     log = Math.log2(pow)
     console.log('You need ' + log + ' RANDOM characters in [a-zA-Z0-9] to get the same entropy.')
-    
-  })
 
-  */
-  //==================================================================
-  //Solution 2 - Teacher comment: Password should be easy to remember! 
-  //==================================================================
+})
 
-  var generate = require('xkcd-pass-plus');
-  var entropy = require('string-entropy');
-  
-  var defaultOptions = {
+
+//==================================================================
+//Solution 2 - Teacher comment: Password should be easy to remember! 
+//==================================================================
+/*
+var generate = require('xkcd-pass-plus');
+var entropy = require('string-entropy');
+
+var defaultOptions = {
     words: {
-      dictionary: 'mixed', // xkcd (2k, most memorable) or letterpress (270k) or mixed
-      num: 4, // number of words to generate
-      min: 4, // minimum length of each word
-      max: 8 // maximum length of each word
+        dictionary: 'mixed', // xkcd (2k, most memorable) or letterpress (270k) or mixed
+        num: 4, // number of words to generate
+        min: 4, // minimum length of each word
+        max: 8 // maximum length of each word
     },
     separator: '-', // how to join words
     paddingDigits: { // how many digits to add before and after the pass 
-     // before: 0,
-      //after: 1 
+        // before: 0,
+        //after: 1 
     },
     paddingSymbols: { // how many symbols to add before and after the pass
-      //symbols: '!@#$%^&*()', // which symbols
-      //before: 0,
-      //after: 1
+        //symbols: '!@#$%^&*()', // which symbols
+        //before: 0,
+        //after: 1
     }
-  };
-  var pass = generate(defaultOptions).pass;
-  var passEntropy = generate(pass).entropy;
-  var blindEntropy = generate(pass).blindEntropy;
-  var rating = generate(pass).rating;
-  
-  console.log(pass);
-  console.log(blindEntropy);
-  console.log(rating);
+};
+var pass = generate(defaultOptions).pass;
+var passEntropy = generate(pass).entropy;
+var blindEntropy = generate(pass).blindEntropy;
+var rating = generate(pass).rating;
 
-  console.log(defaultOptions.words.num + ' RANDOM words from word list of NNNNNN words')
-  console.log(pass)  // ['distome', 'pantries', 'sending', 'weiner'] 
-  console.log('Entropy: with dashes:' + entropy(pass) + ' bits');//Entropy 
-  console.log("Entropy: without dashes:" +passEntropy);
-  
-  pow = Math.pow(62, defaultOptions.words.num)
-  log = Math.log2(pow)
-  console.log('You need ' + log + ' RANDOM characters in [a-zA-Z0-9] to get the same entropy.')
-  
+console.log(pass);
+console.log(blindEntropy);
+console.log(rating);
+
+console.log(defaultOptions.words.num + ' RANDOM words from word list of NNNNNN words')
+console.log(pass)  // ['distome', 'pantries', 'sending', 'weiner'] 
+console.log('Entropy: with dashes:' + entropy(pass) + ' bits');//Entropy 
+console.log("Entropy: without dashes:" + passEntropy);
+
+pow = Math.pow(62, defaultOptions.words.num)
+log = Math.log2(pow)
+console.log('You need ' + log + ' RANDOM characters in [a-zA-Z0-9] to get the same entropy.')
+*/
